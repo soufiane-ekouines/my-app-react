@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 
-const ContactCart = () => {
+const ContactCart = (props) => {
   const [ShowAge,setShowAge] = useState(false);
 
     return (
     
         <div className='contact-card'>
         <img 
-        src=''
+        src={props.avatarUrl}
         alt='profile'
         ></img>
       
       <div className='user-details'>
-        <p>Name: soufiane ekouines</p>
-        <p>Email: ekouiness@gmail.com</p>
+        <p>Name: {props.name}</p>
+        <p>Email: {props.email}</p>
         <button onClick={()=>{setShowAge(!ShowAge)}}>age</button>
-        {ShowAge &&  <p>Age: 25</p>}
+        {/* if ShowAge true sho age else hide it  */}
+        {ShowAge &&  <p>Age: {props.age}</p>}
       </div>
       </div>
     );
